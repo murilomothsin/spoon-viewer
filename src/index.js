@@ -1,10 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { Route, Switch } from "react-router-dom"
+import { Redirect, Route, Switch } from "react-router-dom"
 import { Provider as ReduxProvider } from "react-redux"
 import { RouterProvider } from "./lib/RouterProvider"
 import { store } from "./store"
-import Welcome from "./pages/Welcome"
 import Recipes from "./pages/Recipes"
 import { library, dom } from "@fortawesome/fontawesome-svg-core"
 import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck"
@@ -19,7 +18,7 @@ const Root = ({ store }) => {
     <ReduxProvider store={store}>
       <RouterProvider>
         <Switch>
-          <Route exact path="/" component={Welcome} />
+          <Redirect exact from="/" to="/recipes" />
           <Route path="/recipes" component={Recipes} />
         </Switch>
       </RouterProvider>
