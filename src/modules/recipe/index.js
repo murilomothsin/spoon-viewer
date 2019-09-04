@@ -52,12 +52,11 @@ export const getRecipesList = () => async dispatch =>
     })
     .catch(console.error)
 
-export const getRecipe = id => async dispatch =>
+export const getRecipe = id => dispatch =>
   client
     .getEntry(id)
     .then(response => {
       console.log(response)
-      debugger
       dispatch({
         type: GET_RECIPE,
         current: response,

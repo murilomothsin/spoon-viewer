@@ -6,6 +6,13 @@ import { RouterProvider } from "./lib/RouterProvider"
 import { store } from "./store"
 import Welcome from "./pages/Welcome"
 import Recipes from "./pages/Recipes"
+import { library, dom } from "@fortawesome/fontawesome-svg-core"
+import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck"
+
+import "./index.css"
+
+library.add(faCheck)
+dom.watch()
 
 const Root = ({ store }) => {
   return (
